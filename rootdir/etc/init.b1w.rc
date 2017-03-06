@@ -450,7 +450,6 @@ service set_baseband /system/bin/set_baseband.sh
     class late_start
     user system
     group shell
-    seclabel u:r:set_baseband:s0
     oneshot
     disabled
 
