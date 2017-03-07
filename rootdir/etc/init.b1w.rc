@@ -453,6 +453,10 @@ service set_baseband /system/bin/set_baseband.sh
     oneshot
     disabled
 
+on property:gsm.version.baseband=""
+    start set_baseband
+
+
 service thermal-engine /system/bin/thermal-engine
     class main
     user root
@@ -499,5 +503,3 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale 2
-
-    start set_baseband
