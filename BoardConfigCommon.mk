@@ -149,3 +149,8 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
 BOARD_NFC_CHIPSET := pn547
 BOARD_NFC_DEVICE := "/dev/pn547"
 
+
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include device/lge/b1w-common/twrp.mk
+endif
