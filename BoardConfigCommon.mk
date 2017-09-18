@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_SPECIFIC_HEADER_PATH := device/lge/b1w-common/include
+#TARGET_SPECIFIC_HEADER_PATH := device/lge/b1w-common/include
 
 # Architecture
 TARGET_ARCH := arm
@@ -34,7 +34,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/lge/b1w-common/releasetools/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 ehci-hcd.park=3 msm_rtb.filter=0x0 androidboot.hardware=b1w
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 ehci-hcd.park=3 msm_rtb.filter=0x0 androidboot.hardware=b1w  androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x00000100
@@ -79,12 +79,16 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_USES_ION := true
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 USE_OPENGL_RENDERER := true
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# HIDL
+DEVICE_MANIFEST_FILE := device/lge/b1w-common/configs/manifest.xml
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -129,10 +133,10 @@ BOARD_RIL_CLASS += ../../../device/lge/b1w-common/ril
 TARGET_USE_SDCLANG := true
 
 # SELinux policies
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-    device/lge/b1w-common/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    device/lge/b1w-common/sepolicy
 
 # Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
