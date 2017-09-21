@@ -151,12 +151,11 @@ err_ret:
 }
 
 /* verify_trustzone("TZ_VERSION", "TZ_VERSION", ...) */
-Value * VerifyTrustZoneFn(const char *name, State *state, const std::vector<std::unique_ptr<Expr>>& argv){
+Value * VerifyTrustZoneFn(const char *name, State *state, const std::vector<std::unique_ptr<Expr>>& argv) {
     char current_tz_version[TZ_VER_BUF_LEN];
-    int i, ret;
     size_t i;
     int ret;
-	
+
     ret = get_tz_version(current_tz_version, TZ_VER_BUF_LEN);
     if (ret) {
         return ErrorAbort(state, kFreadFailure, "%s() failed to read current TZ version: %d",
@@ -171,7 +170,7 @@ Value * VerifyTrustZoneFn(const char *name, State *state, const std::vector<std:
     ret = 0;
     for (const auto& version : tz_version) {
         uiPrintf(state, "Comparing TZ version %s to %s",
-           version.c_str(), current_tz_version);
+            version.c_str(), current_tz_version);
         if (strncmp(version.c_str(), current_tz_version, version.length()) == 0) {
             ret = 1;
             break;
