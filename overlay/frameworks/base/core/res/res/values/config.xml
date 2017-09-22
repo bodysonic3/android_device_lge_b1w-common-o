@@ -329,8 +329,8 @@
 
     <bool name="config_lidControlsSleep">true</bool>
 
-    <!-- Disable Button backlight settings -->
-    <integer name="config_buttonBrightnessSettingDefault">0</integer>
+    <!-- Disable Button backlight settings 
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>-->
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
