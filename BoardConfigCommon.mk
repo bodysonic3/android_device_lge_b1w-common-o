@@ -34,8 +34,9 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/lge/b1w-common/releasetools/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 ehci-hcd.park=3 msm_rtb.filter=0x0 androidboot.hardware=b1w  androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 ehci-hcd.park=3 msm_rtb.filter=0x0 androidboot.hardware=b1w
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/lge/msm8974
@@ -68,8 +69,8 @@ BOARD_CHARGING_CMDLINE_NAME := "androidboot.mode"
 BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-# CMHW
-BOARD_HARDWARE_CLASS := device/lge/b1w-common/cmhw/
+# LINEAGEHW
+BOARD_HARDWARE_CLASS := device/lge/b1w-common/lineagehw/
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/dt2w_enable"
 
 # Display
@@ -88,7 +89,7 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 EXTENDED_FONT_FOOTPRINT := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/lge/b1w-common/configs/manifest.xml
+#DEVICE_MANIFEST_FILE := device/lge/b1w-common/configs/manifest.xml
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
